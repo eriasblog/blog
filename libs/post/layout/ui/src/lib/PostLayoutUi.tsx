@@ -1,5 +1,6 @@
 import React from 'react';
-// import { PostHeaderUi } from '@blog/post/header/ui';
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+import { PostHeaderUi } from '@blog/post/header/ui';
 
 import styles from './PostLayoutUi.module.css';
 
