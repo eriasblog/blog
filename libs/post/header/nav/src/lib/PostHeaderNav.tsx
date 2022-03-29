@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { FaCircleNotch } from 'react-icons/fa';
 import { HiOutlineSupport } from 'react-icons/hi';
 import { IoMdCheckmarkCircleOutline, IoMdClose } from 'react-icons/io';
-// import { SharedSearchButton } from '@htl-chat/shared/search/button';
+import { UtilSearchButton } from '@blog/util/search/button';
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 
@@ -96,10 +96,7 @@ export function PostHeaderNav(props: PostHeaderNavProps) {
             </ul>
             <div className="flex justify-between items-center">
               <div className="w-[80%] ml-3">
-                {/* <SharedSearchButton
-                  setIsSearchOpen={setIsSearchOpen}
-                  setNavMenuOpen={setNavMenuOpen}
-                /> */}
+                <UtilSearchButton />
               </div>
               <IoMdClose
                 className="text-2xl cursor-pointer text-titleColor mr-1"
