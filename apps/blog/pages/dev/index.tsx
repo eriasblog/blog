@@ -4,7 +4,7 @@ export function Index() {
 
   return (
     <Fragment>
-      <h1>Hwllo</h1>
+      <h1>Hwllo dev</h1>
     </Fragment>
   );
 }
