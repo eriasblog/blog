@@ -1,0 +1,23 @@
+{
+  "root": "libs/post/header/nav",
+  "sourceRoot": "libs/post/header/nav/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/post/header/nav/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/post/header/nav"],
+      "options": {
+        "jestConfig": "libs/post/header/nav/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
