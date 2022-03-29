@@ -1,0 +1,23 @@
+{
+  "root": "libs/util/loading/spinner",
+  "sourceRoot": "libs/util/loading/spinner/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/util/loading/spinner/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/util/loading/spinner"],
+      "options": {
+        "jestConfig": "libs/util/loading/spinner/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
