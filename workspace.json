@@ -6,6 +6,7 @@
     "post-header-nav": "libs/post/header/nav",
     "post-header-ui": "libs/post/header/ui",
     "post-layout-ui": "libs/post/layout/ui",
-    "util-search-button": "libs/util/search/button"
+    "util-search-button": "libs/util/search/button",
+    "util-search-modal": "libs/util/search/modal"
   }
 }

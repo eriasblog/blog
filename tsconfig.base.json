@@ -18,7 +18,8 @@
       "@blog/post/header/nav": ["libs/post/header/nav/src/index.ts"],
       "@blog/post/header/ui": ["libs/post/header/ui/src/index.ts"],
       "@blog/post/layout/ui": ["libs/post/layout/ui/src/index.ts"],
-      "@blog/util/search/button": ["libs/util/search/button/src/index.ts"]
+      "@blog/util/search/button": ["libs/util/search/button/src/index.ts"],
+      "@blog/util/search/modal": ["libs/util/search/modal/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
