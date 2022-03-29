@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import Image from 'next/image';
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { PostLayoutUi } from '@blog/post/layout/ui';
 
 /* eslint-disable-next-line */
@@ -16,6 +17,7 @@ export function SharedSearchButton(props: SharedSearchButtonProps) {
   }) => {
     return `https://yt3.ggpht.com/yti/APfAmoHXagPJqsoblSlAwzkf_We4PmNAVy51AF_OLQyiFw=s${width}-c-k-c0x00ffffff-no-rj-mo`;
   };
+
   return (
     <PostLayoutUi>
       <Image
