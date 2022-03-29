@@ -5,6 +5,7 @@
     "blog-e2e": "apps/blog-e2e",
     "post-header-nav": "libs/post/header/nav",
     "post-header-ui": "libs/post/header/ui",
-    "post-layout-ui": "libs/post/layout/ui"
+    "post-layout-ui": "libs/post/layout/ui",
+    "util-search-button": "libs/util/search/button"
   }
 }
