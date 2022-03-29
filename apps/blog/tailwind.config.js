@@ -7,6 +7,7 @@ module.exports = {
   content: [
     join(__dirname, 'pages/**/!(*.stories|*.spec).{ts,tsx,html}'),
     join('libs/post/**/!(*.stories|*.spec).{ts,tsx,html}'),
+    join('libs/util/**/!(*.stories|*.spec).{ts,tsx,html}'),
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
