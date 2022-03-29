@@ -3,3 +3,15 @@
 @tailwind components;
 @tailwind base;
 @tailwind utilities;
+
+.container {
+  @apply max-w-header mx-6 bg-primaryColor;
+}
+
+.disable-ring {
+  @apply outline-none;
+}
+
+button:focus {
+  outline: 0;
+}
