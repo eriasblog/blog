@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import UtilSearchContext from './UtilSearchContext';
+import UtilSearchSearchCtx from './UtilSearchContext';
 
-describe('UtilSearchContext', () => {
+describe('UtilSearchSearchCtx', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<UtilSearchContext />);
+    const { baseElement } = render(<UtilSearchSearchCtx />);
     expect(baseElement).toBeTruthy();
   });
 });
