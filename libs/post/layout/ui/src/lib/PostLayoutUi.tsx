@@ -17,7 +17,7 @@ export function PostLayoutUi(props: PostLayoutUiProps) {
       <HeaderProvider>
         <PostHeaderUi />
       </HeaderProvider>
-      <main className="container">{children}</main>
+      {children}
     </Fragment>
   );
 }
