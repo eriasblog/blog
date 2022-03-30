@@ -19,6 +19,9 @@
       "@blog/post/header/nav": ["libs/post/header/nav/src/index.ts"],
       "@blog/post/header/ui": ["libs/post/header/ui/src/index.ts"],
       "@blog/post/layout/ui": ["libs/post/layout/ui/src/index.ts"],
+      "@blog/post/main/author/data": [
+        "libs/post/main/author/data/src/index.ts"
+      ],
       "@blog/post/main/author/ui": ["libs/post/main/author/ui/src/index.ts"],
       "@blog/post/main/ui": ["libs/post/main/ui/src/index.ts"],
       "@blog/util/data/author": ["libs/util/data/author/src/index.ts"],
