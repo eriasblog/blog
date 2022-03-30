@@ -1,15 +1,19 @@
 import { useContext } from 'react';
 import Link from 'next/link';
 import { FaCircleNotch } from 'react-icons/fa';
-import { HiOutlineSupport } from 'react-icons/hi';
+import { HiOutlineSupport, HiOutlinePencilAlt } from 'react-icons/hi';
 import { IoMdCheckmarkCircleOutline, IoMdClose } from 'react-icons/io';
 import { BsChat } from 'react-icons/bs';
+import { MdFace } from 'react-icons/md';
+import { BiHomeAlt } from 'react-icons/bi';
+import { FiTag } from 'react-icons/fi';
 import { UtilSearchButton } from '@blog/util/search/button';
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import { SearchProvider } from '@blog/util/search/context';
 import { UtilSearchModal } from '@blog/util/search/modal';
 import { HeaderCtx } from '@blog/post/header/context';
+import { UtilDataAuthor } from '@blog/util/data/author';
 
 import styles from './PostHeaderNav.module.css';
 
@@ -62,7 +66,7 @@ export function PostHeaderNav(props: PostHeaderNavProps) {
               <li className="cursor-pointer">
                 <Link href="/link">
                   <div className="flex flex-col items-center text-sm font-medium">
-                    <HiOutlineSupport className="text-xl" />
+                    <MdFace className="text-xl" />
                     <p className="">Author</p>
                   </div>
                 </Link>
@@ -78,7 +82,7 @@ export function PostHeaderNav(props: PostHeaderNavProps) {
               <li className="cursor-pointer">
                 <Link href="/link">
                   <div className="flex flex-col items-center text-sm font-medium">
-                    <IoMdCheckmarkCircleOutline className="text-xl" />
+                    <BiHomeAlt className="text-xl" />
                     <p className="">Home</p>
                   </div>
                 </Link>
@@ -86,7 +90,7 @@ export function PostHeaderNav(props: PostHeaderNavProps) {
               <li className="cursor-pointer">
                 <Link href="/link">
                   <div className="flex flex-col items-center text-sm font-medium">
-                    <IoMdCheckmarkCircleOutline className="text-xl" />
+                    <FiTag className="text-xl" />
                     <p className="">Favourites</p>
                   </div>
                 </Link>
@@ -94,8 +98,8 @@ export function PostHeaderNav(props: PostHeaderNavProps) {
               <li className="cursor-pointer">
                 <Link href="/link">
                   <div className="flex flex-col items-center text-sm font-medium">
-                    <IoMdCheckmarkCircleOutline className="text-xl" />
-                    <p className="">Write</p>
+                    <MdFace className="text-xl" />
+                    <p className="">Profile</p>
                   </div>
                 </Link>
               </li>
