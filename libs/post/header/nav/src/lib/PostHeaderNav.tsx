@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { FaCircleNotch } from 'react-icons/fa';
 import { HiOutlineSupport } from 'react-icons/hi';
 import { IoMdCheckmarkCircleOutline, IoMdClose } from 'react-icons/io';
+import { BsChat } from 'react-icons/bs';
 import { UtilSearchButton } from '@blog/util/search/button';
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
@@ -53,8 +54,8 @@ export function PostHeaderNav(props: PostHeaderNavProps) {
               <li className="cursor-pointer">
                 <Link href="/link">
                   <div className="flex flex-col items-center text-sm font-medium">
-                    <FaCircleNotch className="text-xl" />
-                    <p className="">About</p>
+                    <HiOutlineSupport className="text-xl" />
+                    <p className="">More</p>
                   </div>
                 </Link>
               </li>
@@ -62,7 +63,15 @@ export function PostHeaderNav(props: PostHeaderNavProps) {
                 <Link href="/link">
                   <div className="flex flex-col items-center text-sm font-medium">
                     <HiOutlineSupport className="text-xl" />
-                    <p className="">FAQ</p>
+                    <p className="">Author</p>
+                  </div>
+                </Link>
+              </li>
+              <li className="cursor-pointer">
+                <Link href="/link">
+                  <div className="flex flex-col items-center text-sm font-medium">
+                    <BsChat className="text-xl" />
+                    <p className="">Comments</p>
                   </div>
                 </Link>
               </li>
@@ -70,7 +79,7 @@ export function PostHeaderNav(props: PostHeaderNavProps) {
                 <Link href="/link">
                   <div className="flex flex-col items-center text-sm font-medium">
                     <IoMdCheckmarkCircleOutline className="text-xl" />
-                    <p className="">Safety</p>
+                    <p className="">Home</p>
                   </div>
                 </Link>
               </li>
@@ -78,7 +87,7 @@ export function PostHeaderNav(props: PostHeaderNavProps) {
                 <Link href="/link">
                   <div className="flex flex-col items-center text-sm font-medium">
                     <IoMdCheckmarkCircleOutline className="text-xl" />
-                    <p className="">Safety</p>
+                    <p className="">Favourites</p>
                   </div>
                 </Link>
               </li>
@@ -86,15 +95,7 @@ export function PostHeaderNav(props: PostHeaderNavProps) {
                 <Link href="/link">
                   <div className="flex flex-col items-center text-sm font-medium">
                     <IoMdCheckmarkCircleOutline className="text-xl" />
-                    <p className="">Safety</p>
-                  </div>
-                </Link>
-              </li>
-              <li className="cursor-pointer">
-                <Link href="/link">
-                  <div className="flex flex-col items-center text-sm font-medium">
-                    <IoMdCheckmarkCircleOutline className="text-xl" />
-                    <p className="">Safety</p>
+                    <p className="">Write</p>
                   </div>
                 </Link>
               </li>
