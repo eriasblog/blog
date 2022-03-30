@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@blog/post/header/context": ["libs/post/header/context/src/index.ts"],
       "@blog/post/header/nav": ["libs/post/header/nav/src/index.ts"],
       "@blog/post/header/ui": ["libs/post/header/ui/src/index.ts"],
       "@blog/post/layout/ui": ["libs/post/layout/ui/src/index.ts"],

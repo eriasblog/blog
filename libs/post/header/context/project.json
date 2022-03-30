@@ -1,0 +1,23 @@
+{
+  "root": "libs/post/header/context",
+  "sourceRoot": "libs/post/header/context/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/post/header/context/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/post/header/context"],
+      "options": {
+        "jestConfig": "libs/post/header/context/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
