@@ -10,8 +10,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to blog!</title>
       </Head>
       <main className="app">
-        <UtilSearchModal />
-        <Component {...pageProps} />
+          <Component {...pageProps} />
       </main>
     </>
   );
