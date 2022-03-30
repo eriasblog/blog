@@ -1,18 +1,19 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import Link from 'next/link';
 import { PostHeaderNav } from '@blog/post/header/nav';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { ReactComponent as Logo } from '../../../../../../apps/blog/public/icons/logo.svg';
 import { AiOutlineAppstore } from 'react-icons/ai';
+import { HeaderCtx } from '@blog/post/header/context';
 
 import './PostHeaderUi.module.css';
 
 /* eslint-disable-next-line */
-export interface PostHeaderUiProps {
-  // setIsSearchOpen: any;
-}
+export interface PostHeaderUiProps {}
 
 export function PostHeaderUi(props: PostHeaderUiProps) {
+  const { toggleNav } = useContext(HeaderCtx);
+
   return (
     <header className="fixed w-full bottom-0 left-0 z-40 bg-primaryColor">
       <nav className="max-w-header ml-6 mr-5 h-header flex justify-between items-center text-white">
@@ -35,7 +36,9 @@ export function PostHeaderUi(props: PostHeaderUiProps) {
           </Link>
           <AiOutlineAppstore
             className="text-xl"
-            // onClick={() => setNavMenuOpen(true)}
+            onClick={() => {
+              toggleNav && toggleNav(true);
+            }}
           />
         </div>
       </nav>
