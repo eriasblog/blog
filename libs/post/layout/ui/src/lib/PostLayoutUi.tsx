@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { PostHeaderUi } from '@blog/post/header/ui';
 import { HeaderProvider } from '@blog/post/header/context';
@@ -11,10 +11,14 @@ export interface PostLayoutUiProps {
 }
 
 export function PostLayoutUi(props: PostLayoutUiProps) {
+  const { children } = props;
   return (
-    <HeaderProvider>
-      <PostHeaderUi />
-    </HeaderProvider>
+    <Fragment>
+      <HeaderProvider>
+        <PostHeaderUi />
+      </HeaderProvider>
+      {children}
+    </Fragment>
   );
 }
 

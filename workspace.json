@@ -7,6 +7,8 @@
     "post-header-nav": "libs/post/header/nav",
     "post-header-ui": "libs/post/header/ui",
     "post-layout-ui": "libs/post/layout/ui",
+    "post-main-author-ui": "libs/post/main/author/ui",
+    "post-main-ui": "libs/post/main/ui",
     "util-data-author": "libs/util/data/author",
     "util-loading-spinner": "libs/util/loading/spinner",
     "util-search-button": "libs/util/search/button",
