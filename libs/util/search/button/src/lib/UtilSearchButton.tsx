@@ -1,6 +1,7 @@
-import { useState, useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { FiSearch, FiCommand } from 'react-icons/fi';
 import { SearchCtx } from '@blog/util/search/context';
+import { HeaderCtx } from '@blog/post/header/context';
 
 import './UtilSearchButton.module.css';
 
@@ -9,10 +10,13 @@ export interface UtilSearchButtonProps {}
 
 export function UtilSearchButton(props: UtilSearchButtonProps) {
   const { toggleSearchModal } = useContext(SearchCtx);
+  const { toggleNav } = useContext(HeaderCtx);
 
   return (
     <button
-      onClick={() => { toggleSearchModal && toggleSearchModal(true); }}
+      onClick={() => {
+        toggleSearchModal && toggleSearchModal(true);
+      }}
       className="bg-searchBarBg border-searchBarBorder border-2 pl-4 py-1 pr-2 rounded-xl cursor-pointer w-full"
     >
       <div className="flex justify-between text-searchBarText">
