@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import Link from 'next/link';
 import { FaCircleNotch } from 'react-icons/fa';
 import { HiOutlineSupport } from 'react-icons/hi';
@@ -7,6 +8,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import { SearchProvider } from '@blog/util/search/context';
 import { UtilSearchModal } from '@blog/util/search/modal';
+import { HeaderCtx } from '@blog/post/header/context';
 
 import styles from './PostHeaderNav.module.css';
 
@@ -14,15 +16,16 @@ import styles from './PostHeaderNav.module.css';
 export interface PostHeaderNavProps {}
 
 export function PostHeaderNav(props: PostHeaderNavProps) {
-  function closeModal() {
-    return;
-  }
+  const { navOpen, toggleNav } = useContext(HeaderCtx);
+
   return (
-    <Transition appear show={true} as={Fragment}>
+    <Transition appear show={navOpen} as={Fragment}>
       <Dialog
         as="div"
         className="fixed bottom-0 left-0 w-full bg-primaryColor pt-8 px-6 pb-5 drop-shadow-3xl rounded-t-2xl z-50"
-        onClose={closeModal}
+        onClose={() => {
+          toggleNav && toggleNav(false);
+        }}
       >
         <Transition.Child
           as={Fragment}
@@ -97,7 +100,12 @@ export function PostHeaderNav(props: PostHeaderNavProps) {
               </li>
             </ul>
             <div className="flex justify-between items-center">
-              <div className="w-[80%] ml-3">
+              <div
+                className="w-[80%] ml-3"
+                onClick={() => {
+                  toggleNav && toggleNav(false);
+                }}
+              >
                 <SearchProvider>
                   <UtilSearchButton />
                   <UtilSearchModal />
@@ -105,7 +113,9 @@ export function PostHeaderNav(props: PostHeaderNavProps) {
               </div>
               <IoMdClose
                 className="text-2xl cursor-pointer text-titleColor mr-1"
-                onClick={closeModal}
+                onClick={() => {
+                  toggleNav && toggleNav(false);
+                }}
               />
             </div>
           </div>
