@@ -1,14 +1,38 @@
-import styles from './UtilSearchContext.module.css';
+import React, { useState, useEffect, createContext, FC } from 'react';
 
-/* eslint-disable-next-line */
-export interface UtilSearchContextProps {}
-
-export function UtilSearchContext(props: UtilSearchContextProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to UtilSearchContext!</h1>
-    </div>
-  );
+interface ISearchCtx {
+  searchModalOpen: boolean;
+  toggleSearchModal?: (value: boolean) => void;
 }
 
-export default UtilSearchContext;
+const defaultState = {
+  searchModalOpen: false,
+};
+
+// The ISearchCtx needs a Partial wrapper because toggleSearchModal is possibly undefined
+export const SearchCtx = createContext<ISearchCtx>(defaultState);
+
+// export default Context;
+
+export const SearchProvider: React.FC = ({ children }) => {
+  const [searchModalOpen, setsearchModalOpen] = useState(
+    defaultState.searchModalOpen
+  );
+
+  const toggleSearchModal = (value: boolean) => {
+    setsearchModalOpen(value);
+    console.log(searchModalOpen);
+  };
+  console.log(searchModalOpen);
+
+  return (
+    <SearchCtx.Provider
+      value={{
+        searchModalOpen,
+        toggleSearchModal,
+      }}
+    >
+      {children}
+    </SearchCtx.Provider>
+  );
+};
