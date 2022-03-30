@@ -1,6 +1,7 @@
 import React from 'react';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { PostHeaderUi } from '@blog/post/header/ui';
+import { HeaderProvider } from '@blog/post/header/context';
 
 import styles from './PostLayoutUi.module.css';
 
@@ -10,7 +11,11 @@ export interface PostLayoutUiProps {
 }
 
 export function PostLayoutUi(props: PostLayoutUiProps) {
-  return (<PostHeaderUi />);
+  return (
+    <HeaderProvider>
+      <PostHeaderUi />
+    </HeaderProvider>
+  );
 }
 
 export default PostLayoutUi;
