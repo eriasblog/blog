@@ -5,6 +5,8 @@ import { IoMdCheckmarkCircleOutline, IoMdClose } from 'react-icons/io';
 import { UtilSearchButton } from '@blog/util/search/button';
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
+import { SearchProvider } from '@blog/util/search/context';
+import { UtilSearchModal } from '@blog/util/search/modal';
 
 import styles from './PostHeaderNav.module.css';
 
@@ -96,7 +98,10 @@ export function PostHeaderNav(props: PostHeaderNavProps) {
             </ul>
             <div className="flex justify-between items-center">
               <div className="w-[80%] ml-3">
-                <UtilSearchButton />
+                <SearchProvider>
+                  <UtilSearchButton />
+                  <UtilSearchModal />
+                </SearchProvider>
               </div>
               <IoMdClose
                 className="text-2xl cursor-pointer text-titleColor mr-1"
