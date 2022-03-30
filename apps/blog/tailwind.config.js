@@ -24,7 +24,7 @@ module.exports = {
         white: '#ffffff',
         primaryColor: '#F9F9F9',
         countryCode: '#989DA3',
-        titleColor: '#f1f2f3',
+        titleColor: '#000000',
         searchBarBg: '#F9F9F9',
         searchBarBorder: '#BAC4D4',
         searchBarText: '#555A61',
