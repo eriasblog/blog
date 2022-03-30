@@ -1,14 +1,27 @@
-import styles from './PostHeaderContext.module.css';
+import React, { createContext, useState } from 'react';
 
-/* eslint-disable-next-line */
-export interface PostHeaderContextProps {}
-
-export function PostHeaderContext(props: PostHeaderContextProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to PostHeaderContext!</h1>
-    </div>
-  );
+interface IHeader {
+  navOpen: boolean;
+  toggleNav?: (value: boolean) => void;
 }
 
-export default PostHeaderContext;
+const defaultState = {
+  navOpen: false,
+};
+
+// The ISearchCtx needs a Partial wrapper because toggleSearchModal is possibly undefined
+export const HeaderCtx = createContext<Partial<IHeader>>(defaultState);
+
+export const HeaderProvider: React.FC = ({ children }) => {
+  const [navOpen, setNavOpen] = useState<boolean>(defaultState.navOpen);
+
+  const toggleNav = (value: boolean) => {
+    setNavOpen(value);
+  };
+
+  return (
+    <HeaderCtx.Provider value={{ navOpen, toggleNav }}>
+      {children}
+    </HeaderCtx.Provider>
+  );
+};
