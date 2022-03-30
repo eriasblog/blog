@@ -88,17 +88,17 @@ export function UtilSearchModal(props: UtilSearchModalProps) {
     },
   ];
 
-  // useEffect(() => {
-  //   function onKeyDown(event: any) {
-  //     if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
-  //       setIsSearchOpen(!isSearchOpen);
-  //     }
-  //   }
-  //   window.addEventListener('keydown', onKeyDown);
-  //   return () => {
-  //     window.removeEventListener('keydown', onKeyDown);
-  //   };
-  // }, [isSearchOpen]);
+  useEffect(() => {
+    function onKeyDown(event: any) {
+      if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
+        toggleSearchModal && toggleSearchModal(!searchModalOpen);
+      }
+    }
+    window.addEventListener('keydown', onKeyDown);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [searchModalOpen]);
 
   const filteredProjects = query
     ? projects.filter((project: IProject) =>
@@ -106,16 +106,13 @@ export function UtilSearchModal(props: UtilSearchModalProps) {
       )
     : [];
 
-  const toggleSearchModal2 = () => {
-    toggleSearchModal && toggleSearchModal(false);
-  };
 
   return (
     <Transition show={searchModalOpen} as={Fragment}>
       <Dialog
         as="div"
         className="fixed inset-0 z-10 pt-[35vh] overflow-y-auto"
-        onClose={toggleSearchModal2}
+        onClose={() => {toggleSearchModal && toggleSearchModal(false);}}
         initialFocus={focusRef}
       >
         <Transition.Child
