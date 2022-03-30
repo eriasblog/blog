@@ -1,9 +1,10 @@
-import { Fragment, useState, useRef, useEffect } from 'react';
+import { Fragment, useState, useRef, useEffect, useContext } from 'react';
 import { Dialog, Transition, Combobox, FocusTrap } from '@headlessui/react';
 import { FiSearch } from 'react-icons/fi';
 import { IoSearchCircle } from 'react-icons/io5';
 import { useRouter } from 'next/router';
 import { UtilLoadingSpinner } from '@blog/util/loading/spinner';
+import { SearchCtx } from '@blog/util/search/context';
 
 import './UtilSearchModal.module.css';
 
@@ -11,11 +12,20 @@ import './UtilSearchModal.module.css';
 export interface UtilSearchModalProps {}
 
 export function UtilSearchModal(props: UtilSearchModalProps) {
+  const { searchModalOpen, toggleSearchModal } = useContext(SearchCtx);
   const focusRef = useRef(null);
   const [query, setQuery] = useState<any>('');
   const router = useRouter();
+  // console.log(searchModalOpen);
 
-  const projects = [
+  interface IProject {
+    id: number;
+    title: string;
+    desc: string;
+    link: string;
+  }
+
+  const projects: IProject[] = [
     {
       id: 1,
       title: 'htl.chat - Students chat app',
@@ -91,19 +101,21 @@ export function UtilSearchModal(props: UtilSearchModalProps) {
   // }, [isSearchOpen]);
 
   const filteredProjects = query
-    ? projects.filter((project) =>
+    ? projects.filter((project: IProject) =>
         project.title.toLowerCase().includes(query.toLowerCase())
       )
     : [];
 
+  const toggleSearchModal2 = () => {
+    toggleSearchModal && toggleSearchModal(false);
+  };
+
   return (
-    <Transition show={true} as={Fragment}>
+    <Transition show={searchModalOpen} as={Fragment}>
       <Dialog
         as="div"
         className="fixed inset-0 z-10 pt-[35vh] overflow-y-auto"
-        onClose={() => {
-          /* setIsSearchOpen(false) */
-        }}
+        onClose={toggleSearchModal2}
         initialFocus={focusRef}
       >
         <Transition.Child
@@ -138,7 +150,7 @@ export function UtilSearchModal(props: UtilSearchModalProps) {
             <Combobox
               value={projects}
               onChange={(project) => {
-                // setIsSearchOpen(false);
+                // toggleSearchModal && toggleSearchModal(false);
                 // router.push(`${project.link}`);
               }}
               as="div"
