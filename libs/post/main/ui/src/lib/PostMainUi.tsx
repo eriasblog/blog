@@ -30,6 +30,18 @@ export function PostMainUi(props: PostMainUiProps) {
           <BsThreeDots className="text-xl" />
         </span>
       </div>
+      <div className="flex gap-5 items-center ml-3">
+        <div className="flex gap-2 px-3 py-1 text-[#3d3d3d] items-center border-[1.5px] rounded-2xl">
+          <BsBookmarkPlus />
+          <p className="text-sm">Save</p>
+        </div>
+        <div className="flex gap-5 text-[#757575] text-lg">
+          <FaTwitter />
+          <FaFacebook />
+          <FaLinkedin />
+          <AiOutlineLink />
+        </div>
+      </div>
     </main>
   );
 }
