@@ -4,12 +4,13 @@ import styles from './UtilDataAuthor.module.css';
 
 /* eslint-disable-next-line */
 export interface UtilDataAuthorProps {
+  className: string;
   width: number;
   height: number;
 }
 
 export function UtilDataAuthor(props: UtilDataAuthorProps) {
-  const { width, height } = props;
+  const { className, width, height } = props;
 
   const myLoader = ({
     src,
@@ -26,7 +27,7 @@ export function UtilDataAuthor(props: UtilDataAuthorProps) {
   return (
     <Image
       loader={myLoader}
-      className="rounded-full"
+      className={className}
       src="unnamed.png"
       alt="Picture of the author"
       width={width}
