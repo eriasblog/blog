@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, FC } from 'react';
+import React, { useState, createContext } from 'react';
 
 interface ISearchCtx {
   searchModalOpen: boolean;
@@ -10,9 +10,7 @@ const defaultState = {
 };
 
 // The ISearchCtx needs a Partial wrapper because toggleSearchModal is possibly undefined
-export const SearchCtx = createContext<ISearchCtx>(defaultState);
-
-// export default Context;
+export const SearchCtx = createContext<Partial<ISearchCtx>>(defaultState);
 
 export const SearchProvider: React.FC = ({ children }) => {
   const [searchModalOpen, setsearchModalOpen] = useState(
@@ -21,9 +19,7 @@ export const SearchProvider: React.FC = ({ children }) => {
 
   const toggleSearchModal = (value: boolean) => {
     setsearchModalOpen(value);
-    console.log(searchModalOpen);
   };
-  console.log(searchModalOpen);
 
   return (
     <SearchCtx.Provider
