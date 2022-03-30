@@ -19,23 +19,25 @@ export function PostHeaderUi(props: PostHeaderUiProps) {
       <nav className="max-w-header ml-6 mr-5 h-header flex justify-between items-center text-white">
         <Link href="/">
           <div className="cursor-pointer flex gap-1.5 items-center">
-            <div className="w-8">
+            <div className="w-8 text-black">
               <Logo />
             </div>
             <div className="flex gap-1">
-              <h1 className="font-extrabold text-lg">htl.chat</h1>
-              <p className="text-xxs text-countryCode font-medium">AT</p>
+              <h1 className="font-extrabold text-lg text-black">domain</h1>
+              <p className="text-xxs text-countryCode font-medium">
+                AT
+              </p>
             </div>
           </div>
         </Link>
         <div className="flex items-center cursor-pointer">
           <Link href="/">
-            <div className="px-2.5 py-1 border-[1px] border-white rounded-3xl text-sm font-semibold mr-3">
+            <div className="px-2.5 py-1 border-[2px] rounded-3xl text-sm font-semibold mr-3 border-black text-black">
               Open Chat
             </div>
           </Link>
           <AiOutlineAppstore
-            className="text-xl"
+            className="text-xl text-black"
             onClick={() => {
               toggleNav && toggleNav(true);
             }}
