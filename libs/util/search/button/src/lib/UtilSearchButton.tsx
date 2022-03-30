@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { FiSearch, FiCommand } from 'react-icons/fi';
+import { SearchCtx } from '@blog/util/search/context';
 
 import './UtilSearchButton.module.css';
 
@@ -7,9 +8,11 @@ import './UtilSearchButton.module.css';
 export interface UtilSearchButtonProps {}
 
 export function UtilSearchButton(props: UtilSearchButtonProps) {
+  const { toggleSearchModal } = useContext(SearchCtx);
+
   return (
     <button
-      // onClick={toggleModals}
+      onClick={() => { toggleSearchModal && toggleSearchModal(true); }}
       className="bg-searchBarBg border-searchBarBorder border-2 pl-4 py-1 pr-2 rounded-xl cursor-pointer w-full"
     >
       <div className="flex justify-between text-searchBarText">
@@ -23,7 +26,6 @@ export function UtilSearchButton(props: UtilSearchButtonProps) {
           </kbd>
           <kbd className=" text-center rounded-md border-searchBarBorder border-2 px-1.5 h-[22px]">
             <p className="-translate-y-[1px]">K</p>
-            
           </kbd>
         </div>
       </div>
